@@ -24,7 +24,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append('product', image);
 
-    await fetch(`${backend_url}/upload`, {
+    await fetch(`${backend_url}/cart/upload`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -35,7 +35,7 @@ const AddProduct = () => {
 
     if (dataObj.success) {
       product.image = dataObj.image_url;
-      await fetch(`${backend_url}/addproduct`, {
+      await fetch(`${backend_url}/cart/addproduct`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
